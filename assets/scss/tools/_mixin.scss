@@ -1,0 +1,75 @@
+@use "variables" as v;
+
+@mixin borderStyleN {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@mixin borderItem($set){
+    border-radius: 30px;
+    border: 1px solid #6b6b6b4c;
+    @if($set){       
+        box-shadow: 3px 3px 5px #41414149, -3px -3px 5px #ffffff89;
+    }@else{       
+        box-shadow: inset 3px 3px 5px #41414149,inset -3px -3px 5px #ffffff89;
+    }
+}
+
+@mixin btn($btn) {
+    border-radius: 50%;
+   
+    @if($btn){
+        border: 1px solid #6b6b6b00;
+        box-shadow:inset 3px 3px 5px #41414149,inset -3px -3px 5px #ffffff89;
+    }@else{
+        border: 1px solid #6b6b6b00;
+        box-shadow: 3px 3px 5px #41414149, -3px -3px 5px #ffffff89;
+    }
+}
+
+@mixin borderForm($form){
+    @if($form){
+        border-radius: 0 10px 10px 0;
+        box-shadow:inset 3px 3px 5px #41414149,inset -3px -3px 5px #ffffff89;
+        border: 1px solid #6b6b6b00;
+    }@else{
+        border-radius: 10px;
+        box-shadow:inset 3px 3px 5px #41414149,inset -3px -3px 5px #ffffff89;
+        border: 1px solid #6b6b6b00;
+    }
+}
+
+@mixin positionCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin title{
+    font-size: 2vw;
+    color: v.$fontColor;
+}
+
+
+// breakpointの設定
+$mq-breakpoints: (
+    xl: 1440px,
+    lg: 1280px,
+    md: 1024px,
+    tb: 768px,
+    sm: 576px,
+    xs: 414px) !default;
+//// Media Queryの設定
+@mixin mq($breakpoint: md, $rule: max, $subtraction: false) {
+    $breakpoint: map_get($mq-breakpoints, $breakpoint);
+
+    @if $rule==max and $subtraction {
+        $breakpoint: $breakpoint - 0.0625;
+    }
+
+    @media screen and (#{$rule}-width: $breakpoint) {
+        @content;
+    }
+}

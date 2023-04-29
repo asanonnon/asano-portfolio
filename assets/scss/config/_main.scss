@@ -1,0 +1,196 @@
+@use "../tools/variables" as v;
+@use "../tools/mixin" as m;
+
+main{
+    width: 100%
+}
+.main-title{
+    @include m.borderItem(true);
+    width: 60%;
+    margin: 0 auto;
+    padding: 5%;
+    color: v.$fontColor;
+    .title-top{
+        display: flex;
+        justify-content: center;
+        .title{
+            height: auto;
+            font-family: v.$Eufont;
+            font-size: 10vh;
+            font-weight: 700;
+        }
+        .title-decoration{
+            font-size: 20vh;
+            margin-right: 5%;
+        }
+    }
+    .sub-title{
+        width: 100%;
+        text-align: right;
+    }
+}
+@include m.mq(md){
+    .main-title{
+        width: 90%;
+        .title-top{
+            display: block;
+            .title{
+                font-size: 15vw;
+            }
+            .title-decoration{
+                display: none;
+            }
+        }
+    }
+}
+
+
+.content-area{
+    width: 90%;
+    padding: 10% 5%;
+    .content-item{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        .content-img{
+            @include m.btn(false);
+            transform: rotateZ(20deg);
+            border-radius: 80% 40% 30% 50%;
+            position: relative;
+            width: 40vw;
+            height: 40vw;
+            .content-border{
+                    @include m.positionCenter;
+                    border-radius: 80%  40% 30% 50%;
+                    width: calc(40vw * 0.90);
+                    height: calc(40vw * 0.90);
+                    overflow: hidden;
+                img{
+                    width: 40vw;
+                    height: auto;
+                    transform: rotateZ(-20deg) scale(1.1);        
+                }
+            }
+            
+        }
+        .content-text{
+            width: 40%;
+            margin: 0 auto;
+            div{
+                padding-left: 10%;
+                color: v.$fontColor;
+                h1{}
+                p{
+                    line-height: 1.5rem;
+                }
+            }
+        }
+       
+    }
+    
+}
+@include m.mq(xs){
+    .content-area{
+        .content-item{
+            display: block;
+            .content-img{
+                width: 90vw;
+                height: 90vw;
+                .content-border{
+                    width: calc(90vw * 0.90);
+                    height: calc(90vw * 0.90);
+                    img{
+                        width: 100%;
+                        height: auto;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            .content-text{
+                width: 100%;
+                margin: 0 auto;
+                padding: 10% 0;
+            }
+        }
+    }
+}
+
+.blog-area-home{
+    width: 100%;
+    margin: 0 auto;
+    color: v.$fontColor;
+    h1{
+        @include m.borderItem(true);
+        width: fit-content;
+        padding: 5%;
+        margin-left: 5%;
+        font-size: 3vw;
+    }
+    .blog-wrap-home{
+        width: 60vw;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 5vw 5vw;
+        .blog-item-home{
+            display: block;
+            @include m.borderItem(true);
+            position: relative;
+            width: 45%;
+            height: 30vh;
+            overflow: hidden;
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                transition:.5s;
+            }
+            .blog-title{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30vh;
+                background-color: #00000075;
+                color: #fff;
+                padding: 0 0 0 3%;
+                opacity: 0;
+                transition: .3s;
+                p{
+                    transform: translateY(20vh);
+                }
+            }   
+            &:hover > img{
+                transform: scale(1.1);
+            }
+            &:hover > .blog-title{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@include m.mq(md){
+    .blog-area-home{
+        
+        h1{
+            margin: 0 auto;
+            font-size: 30px;
+        }
+        .blog-wrap-home{
+            display: block;
+            width: 95vw;
+            margin: 0 auto;
+            .blog-item-home{
+                margin: 5% auto;
+                width: 100%;
+                .blog-title{
+                    opacity: 1;
+                    padding-top: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@use "../tools/variables"as v;
+
+footer{
+    background-color: v.$mainColor;
+    padding: 5px;
+    text-align: center;
+    color: v.$fontColor;
+    width: 100vw;
+}

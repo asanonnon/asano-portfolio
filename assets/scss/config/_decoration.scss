@@ -1,0 +1,19 @@
+@use "../tools/variables" as v;
+
+.decoration-item{
+    padding-top: 10vh;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid v.$pointColor2;
+    border-right: 50vw solid v.$pointColor2;
+    border-top: 20vh solid transparent;
+    position: relative;
+}
+.decoration-item2{
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-top: 20vh solid v.$pointColor2;
+    position: relative;
+}

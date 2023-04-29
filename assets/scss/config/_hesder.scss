@@ -1,0 +1,111 @@
+@use "../tools/variables" as v;
+@use "../tools/mixin" as m;
+
+header{
+    border-bottom: 1px solid v.$subColor;
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    
+    .header-icon{
+        position: relative;
+        font-size: 8vh;
+        padding: 1vh 0;
+        margin-left: 3%;
+        i{
+            color: v.$fontColor;
+        }
+    }
+    .menu-bar{
+        display: none;
+    }
+    .menu{
+        width: 90%;
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            li{
+                height: 10vh;
+                font-size: 3vh;
+                position: relative;
+                width: 10vw;
+                text-align: center;
+                line-height: 10vh;
+                border-left: 1px solid v.$subColor;
+                border-right: 1px solid v.$subColor;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    background-color: v.$subColor;
+                    bottom: 0;
+                    left: 0;
+                    height: 0vh;
+                    width: 100%;
+                    transition: .3s ease-out;
+                }
+                &:hover:before{
+                    height: 10vh;
+                }
+                
+                a{
+                color: v.$fontColor;
+                mix-blend-mode: difference;
+                }
+            }
+        }
+    }
+}
+@include m.mq(md){
+    header{
+        border-bottom: none;
+        .menu-bar{
+            display: block;
+            position: fixed;
+            top: 5%;
+            right: 7%;
+            text-align: right;
+            cursor: pointer;
+            z-index: 2;
+            i{
+                font-size: 5vw;
+                color: v.$fontColor;
+            }
+        }
+        .menu{       
+            background-color: #fff;
+            position: fixed;
+            padding-top: 20vh;
+            top: 0%;
+            left: 100%;
+            height: 100vh;
+            width: 100vw;
+            z-index: 1;
+            ul{
+                display: block;  
+                margin-right: 0;
+                li{
+                    border-bottom: 1px solid v.$fontColor ;
+                    border-right: none;
+                    border-left: none;
+                    width: 50%;
+                    text-align: left;
+                    margin: 0 auto;
+                    &::before{
+                        display: none;
+                    }
+                    a{
+                        mix-blend-mode: normal;
+                        color: v.$fontColor;
+                    }
+                }
+            }
+        }
+    }
+
+  
+}
