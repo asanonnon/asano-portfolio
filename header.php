@@ -10,7 +10,7 @@
     <?php wp_body_open(); ?>
     <header>
         <div class="header-icon">
-            <a href="index.html"><i class="fa-brands fa-freebsd"></i></a>
+            <a href="<?php echo home_url(); ?>"><i class="fa-brands fa-freebsd"></i></a>
         </div>
         
         <div class="menu-bar"><i class="fa-solid fa-ellipsis-vertical decoration"></i></div>        

@@ -8,99 +8,36 @@
                 <div class="post-area">
                     
                     <!-----------------post--------------->
-                    <div class="post-item">
-                        <a href="single.html">
+                    <?php if(have_posts()): ?>
+                        <?php while(have_posts()):the_post()?>
+                    <div class="post-item" id="post-<?php the_ID(); ?>">
+                        <a href="<?php the_permalink(); ?>">
                             <div class="post-top">
                                 <div class="post-thumb">
-                                    <img src="assets/img/psImg.jpg" alt="">
+
+                                <?php if(has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail();?>
+                                <?php else:?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/psImg.jpg" alt="">
+                                <?php endif;?>
+                                
                                     <div class="post-title">
-                                        <p>WordPressプラグインについて</p>
+                                        <?php the_title();?>
                                     </div>
                                 </div>                                                        
                             </div>
-                            <div class="post-time">yyyy/mm/dd</div>
+                            <div class="post-time"><?php the_time('Y年m月d日');?></div>
                         </a>
                     </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                     <!-------------------------------->
-                    <div class="post-item">
-                        <div class="post-top">
-                            <div class="post-thumb">
-                                <img src="assets/img/psImg.jpg" alt="">
-                                <div class="post-title">
-                                    <p>sample</p>
-                                </div>
-                            </div>                                                        
-                        </div>
-                        <div class="post-time">yyyy/mm/dd</div>
-                    </div>
-                    <div class="post-item">
-                        <div class="post-top">
-                            <div class="post-thumb">
-                                <img src="assets/img/psImg.jpg" alt="">
-                                <div class="post-title">
-                                    <p>sample</p>
-                                </div>
-                            </div>                                                        
-                        </div>
-                        <div class="post-time">yyyy/mm/dd</div>
-                    </div>
-                    <div class="post-item">
-                        <div class="post-top">
-                            <div class="post-thumb">
-                                <img src="assets/img/psImg.jpg" alt="">
-                                <div class="post-title">
-                                    <p>sample</p>
-                                </div>
-                            </div>                                                        
-                        </div>
-                        <div class="post-time">yyyy/mm/dd</div>
-                    </div>
-                    <div class="post-item">
-                        <div class="post-top">
-                            <div class="post-thumb">
-                                <img src="assets/img/psImg.jpg" alt="">
-                                <div class="post-title">
-                                    <p>sample</p>
-                                </div>
-                            </div>                                                        
-                        </div>
-                        <div class="post-time">yyyy/mm/dd</div>
-                    </div>
-                    <div class="post-item">
-                        <div class="post-top">
-                            <div class="post-thumb">
-                                <img src="assets/img/psImg.jpg" alt="">
-                                <div class="post-title">
-                                    <p>sample</p>
-                                </div>
-                            </div>                                                        
-                        </div>
-                        <div class="post-time">yyyy/mm/dd</div>
-                    </div>
-
-                </div>
-                <div class="side-bar">
                     
-                    <div class="search-form">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="search" placeholder="search">
-                    </div>
-
-                    <div class="tag-form">
-                        <a href="">wordpress</a>
-                        <a href="">html</a>
-                        <a href="">css</a>
-                        <a href="">javasprict</a> 
-                        <a href="">php</a>
-                        <a href="">gsap</a>
-                        <a href="">jquery</a>
-                        <a href="">sass</a>
-                        <a href="">java</a>
-                        <a href="">sql</a>
-                        <a href="">fire base</a>
-                    </div>
 
                 </div>
+               
+                <?php get_sidebar(); ?>
+
             </div>
         </div>
         
