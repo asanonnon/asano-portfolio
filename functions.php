@@ -5,12 +5,7 @@
         wp_enqueue_script( 'gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js', array('gsap-js'), false, true );
         wp_enqueue_script('script',get_template_directory_uri()."/assets/js/script.js",array("gsap-js"),false,true);
 
-        // google-font font-awesome 
-        wp_enqueue_style('google-font01',"https://fonts.googleapis.com");
-        wp_enqueue_style('google-font02',"https://fonts.gstatic.com");
-        wp_enqueue_style('google-font03',"https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Rubik:ital,wght@0,400;1,700&display=swap");
-        wp_enqueue_style('font-awesome',"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-        wp_enqueue_style('main-style', get_template_directory_uri()."/assets/css/style.css",array('google-font01','google-font02','google-font03'));
+        wp_enqueue_style('main-style', get_template_directory_uri()."/assets/css/style.css");
     }
 
     function my_pre_get_posts( $query ) {
@@ -38,5 +33,19 @@
 
   //カスタムメニュー機能を使用可能にする
     add_theme_support('menus');
+
+
+
+  // formの<be>,<p>タグを自動挿入されなくなるやつ
+function mvwpform_autop_filter() {
+  if (class_exists('MW_WP_Form_Admin')) {
+    $mw_wp_form_admin = new MW_WP_Form_Admin();
+    $forms = $mw_wp_form_admin->get_forms();
+    foreach ($forms as $form) {
+      add_filter('mwform_content_wpautop_mw-wp-form-' . $form->ID, '__return_false');
+    }
+  }
+}
+mvwpform_autop_filter();
 
 ?>

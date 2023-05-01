@@ -1,0 +1,68 @@
+@use "../tools/variables" as v;
+@use "../tools/mixin" as m;
+
+
+
+
+.article{
+    position: relative;
+    min-height: 100vh;
+}
+
+.article_header{
+    width: 100%;
+
+
+    .article_title{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 3%;
+        @include m.borderItem(false);
+    }
+    .article_meta{
+        padding: 3%;
+        .post-categories{
+            gap: 10px;
+            li{
+                @include m.borderItem(true);
+                width: fit-content;
+                padding: 1%;
+                display: inline;
+            }
+        }
+        .post_time{
+            display: block;
+            margin-top: 15px;
+        }
+    }
+
+}
+
+.article_body{
+    width: 100%;
+    padding: 3vw;
+    .content{
+        line-height: 1.5rem;
+    }
+}
+
+
+.postLinks{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    .postLink-prev{
+        float: right;
+    }
+    .postLink-next{
+        float: left;
+    }
+}
+
+.postLink{
+    @include m.borderItem(true);
+    padding: 2%;
+}
+
+

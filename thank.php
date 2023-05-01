@@ -1,17 +1,17 @@
-<?php get_header();?>
+<?php get_header(); ?>
     <main>
         
         
-        <div class="error">
-            <i class="fa-brands fa-freebsd"></i>
-            <div>404 File Not Found</div>
-        </div>
+
 
         <div class="contact-form">
             <div class="thank-area">
-               
+                <div class="thank">
+                        お問い合わせありがとうございました。
+                </div>
                 <div class="thank-text">
-                    お探しのページは見つかりませんでした.........
+                    ご記入いただいた情報は無事に送信されました。<br>
+                    確認のため、お客様に自動返信メールをお送りしております
                 </div>
 
                 <div class="top-back">

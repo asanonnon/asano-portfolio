@@ -2,9 +2,10 @@
 
 @use "config/setting";
 @use "config/base";
-@use "config/hesder";
+@use "config/header";
 @use "config/main";
 @use "config/decoration";
 @use "config/footer";
 @use "config/contact";
 @use "config/blog";
+@use "config/single";

@@ -1,8 +1,9 @@
 @use "../tools/variables"as v;
 
 footer{
-    background-color: v.$mainColor;
+    background-color: #fff;
     padding: 5px;
+    margin-top: 10%;
     text-align: center;
     color: v.$fontColor;
     width: 100vw;
