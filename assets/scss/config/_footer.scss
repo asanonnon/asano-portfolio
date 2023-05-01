@@ -2,9 +2,18 @@
 
 footer{
     background-color: #fff;
-    padding: 5px;
+    padding: 5px 0;
     margin-top: 10%;
     text-align: center;
     color: v.$fontColor;
     width: 100vw;
+    .link-icon{
+        width: 100%;
+        padding-top: 1%;
+        line-height: 0.7em;
+        .link-text{
+            font-size: 9px;
+        }
+    }
+    
 }

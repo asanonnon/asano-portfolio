@@ -63,6 +63,10 @@
 .postLink{
     @include m.borderItem(true);
     padding: 2%;
+    &:empty{
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 

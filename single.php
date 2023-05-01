@@ -28,12 +28,8 @@
 						</div>
 
 						<div class="postLinks">
-							<div class="postLink postLink-prev">
-								<?php previous_post_link("<i class='fas fa-chavron-left'></i>%link");?>
-							</div>
-							<div class="postLink postLink-next">
-								<?php next_post_link("%link<i class'fas fa-chevron-right'></i>");?>
-							</div>
+							<div class="postLink postLink-prev"><?php previous_post_link("<i class='fas fa-chavron-left'></i>%link");?></div>
+							<div class="postLink postLink-next"><?php next_post_link("%link<i class'fas fa-chevron-right'></i>");?></div>
 						</div>
 					</article>
 

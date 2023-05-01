@@ -943,11 +943,19 @@ main {
 
 footer {
   background-color: #fff;
-  padding: 5px;
+  padding: 5px 0;
   margin-top: 10%;
   text-align: center;
   color: #44476a;
   width: 100vw;
+}
+footer .link-icon {
+  width: 100%;
+  padding-top: 1%;
+  line-height: 0.7em;
+}
+footer .link-icon .link-text {
+  font-size: 9px;
 }
 
 .contact-title {
@@ -1288,4 +1296,8 @@ footer {
   border: 1px solid rgba(107, 107, 107, 0.2980392157);
   box-shadow: 3px 3px 5px rgba(65, 65, 65, 0.2862745098), -3px -3px 5px rgba(255, 255, 255, 0.537254902);
   padding: 2%;
+}
+.postLink:empty {
+  visibility: hidden;
+  opacity: 0;
 }/*# sourceMappingURL=style.css.map */
