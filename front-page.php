@@ -29,13 +29,20 @@
                 </div>
                 <div class="content-text">
                     <div>
-                        <h1>sample</h1>
-                        <p>
-                            text text text text text text text text text 
-                            text text text text text text text text text 
-                            text text text text text text text text text 
-                            text text text text text text text text text 
-                        </p>
+                        <ul class="main-list-wrap">
+                            <li class="main-list-item">
+                                <p class="main-list-txt01">ユーザーの理解</p>
+                                <p class="main-list-txt02">デザインはユーザーにとって使いやすく魅力的なものでなければなりません。ユーザーのニーズや要求を理解し、彼らの目線で考えることが重要です。</p>
+                            </li>
+                            <li class="main-list-item">
+                                <p class="main-list-txt01">シンプル</p>
+                                <p class="main-list-txt02">シンプルなデザインは情報を明確に伝え、使いやすさを高めます。不要な要素を削ぎ落とし、視覚な生合成を保つことを心がけます。</p>
+                            </li>
+                            <li class="main-list-item">
+                                <p class="main-list-txt01">コミュニケーション</p>
+                                <p class="main-list-txt02">デザイナーは、チームとの協力が欠かせません、アイデアや意図を明確に伝え、フィードバックを受	け入れる姿勢を持ちます。</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
